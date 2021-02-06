@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:soundpool/soundpool.dart';
 
 class Homepage extends StatefulWidget {
-  Homepage({Key key}) : super(key: key);
+  const Homepage({Key key}) : super(key: key);
 
   @override
   _HomepageState createState() => _HomepageState();
@@ -11,8 +11,8 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   Soundpool _soundpool;
-  List<int> _soundIds = [0, 0, 0, 0, 0, 0];
-  List<String> _texts = ['ドスッ', 'バシッ', 'ザシュ', 'ブスッ', 'バキューン', 'ドカーン'];
+  final List<int> _soundIds = [0, 0, 0, 0, 0, 0];
+  final List<String> _texts = ['ドスッ', 'バシッ', 'ザシュ', 'ブスッ', 'バキューン', 'ドカーン'];
 
   @override
   void initState() {
@@ -50,11 +50,11 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("シャドウファイティング"),
+        title: const Text('シャドウファイティング'),
         centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             Expanded(
@@ -95,7 +95,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget _soundbutton(String displaytext, int soundId) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: RaisedButton(
         onPressed: () => _playSound(soundId),
         child: Text(displaytext),
@@ -103,7 +103,7 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
-  _playSound(int soundId) {
+  void _playSound(int soundId) {
     _soundpool.play(soundId);
   }
 }

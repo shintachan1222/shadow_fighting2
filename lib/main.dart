@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'シャドウファイティング',
       theme: ThemeData.dark(),
-      home: Homepage(),
+      home: const Homepage(),
     );
   }
 }

@@ -30,7 +30,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
 
-dev_dependencies:
+dev_dependencies: 
+  pedantic_mono: any
+  json_serializable:
+  build_runner:
+  freezed:
   flutter_test:
     sdk: flutter
 
